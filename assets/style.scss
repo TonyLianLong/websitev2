@@ -1,126 +1,211 @@
 ---
 ---
 
+// Modern color scheme
+$primary-color: #2c3e50;
+$secondary-color: #3498db;
+$light-gray: #f8f9fa;
+$border-color: #e9ecef;
+$text-color: #333;
+
+// Base styles
 html, body {
     font-family: "Computer Modern Serif", "Palatino", "Perpetua", "Baskerville", "Lucida Console", "Florence", "Times New Roman", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+    color: $text-color;
+    line-height: 1.6;
 }
 
-
 html {
-    margin-top: 1rem;
+    margin-top: 2rem;
     text-align: justify !important;
 }
 
-.footer {
-    // position: absolute;
-    // bottom: 0;
-    width: 100%;
-    // height: 60px; /* Set the fixed height of the footer here */
-    // line-height: 60px; /* Vertically center the text there */
-    margin-top: 1rem;
-    padding: 15px;
-    background-color: #f5f5f5;
-}
-
+// Container styles
 .container {
     width: auto;
-    max-width: 680px;
-    padding: 0 15px;
+    max-width: 1250px;
+    padding: 0 2rem;
 }
 
-.footnote {
-    font-size: 1rem;
-    color: darkgrey;
-}
-
+// Profile image styles
 .profile-img {
     border-radius: 50%;
     width: 100%;
     max-width: 250px;
-    margin: 35px 0px 0px 15px;
-    text-align: left;
+    margin: 0 auto;
+    display: block;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    
+    &:hover {
+        transform: scale(1.02);
+    }
 }
 
 .profile-img-small {
     border-radius: 50%;
-    // position: absolute;
-    // top: 2rem;
-    // right: 35px;
-    //margin-left: auto;
-    //display: block;
     float: right;
     height: 100px;
     width: 100px;
-    margin-top: -25px;
-    margin-right: 5px;
-    margin-left: 5px;
-    text-align: right;
+    margin: -25px 5px 5px 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+// Typography
 .page-title {
-    font-size: 2rem;
-    font-weight: 500;
-}
-
-@media (max-width: 575.98px) {
-    .page-title {
-        letter-spacing: -0.05em;
-    }
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: $primary-color;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
 }
 
 .section-title {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     font-weight: 500;
-    margin: 1rem 0px;
+    color: $primary-color;
+    margin: 2rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid $border-color;
 }
 
 .publication-title, .subsection-title {
-    font-size: 1.25rem;
-    // font-weight: bold;
-    margin: 0.5rem 0 0.25rem 0;
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: $primary-color;
+    margin: 1rem 0 0.5rem;
 }
 
+.project-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: $primary-color;
+    margin: 0.75rem 0 0.5rem;
+    text-decoration: none;
+}
+
+// Publication styles
 .publication-venue {
     font-weight: 300;
+    color: #666;
+    
     p {
         margin: 0.125rem 0 0.5rem 0;
     }
 }
 
 .publication-authors {
-    margin: 0 0 0 0;
+    margin: 0;
+    color: #555;
+    
     p {
-        margin: 0 0 0 0;
+        margin: 0;
     }
 }
 
-.publication-excerpt p {
-    margin: 0.5rem 0 0 0;
+.publication-excerpt {
+    background-color: $light-gray;
+    padding: 1rem;
+    border-radius: 4px;
+    margin: 0.5rem 0;
+    
+    p {
+        margin: 0;
+    }
 }
 
 .publication-links {
-    margin: 0.125rem 0 1rem 0;
+    margin: 0.5rem 0 1rem;
+    
+    a {
+        color: $secondary-color;
+        text-decoration: none;
+        transition: color 0.2s ease;
+        
+        &:hover {
+            color: darken($secondary-color, 10%);
+        }
+    }
 }
 
-a:link { text-decoration: none; }
-
-a:visited { text-decoration: none; }
-
-a:hover { text-decoration: none; }
-
-a:active { text-decoration: none; }
-
-.align-self-center {
-    text-align: center;
+// Links
+a {
+    color: $secondary-color;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    line-height: 1.8;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    
+    &:hover {
+        color: darken($secondary-color, 10%);
+    }
 }
 
+// Footer
+.footer {
+    width: 100%;
+    margin-top: 3rem;
+    padding: 2rem 0;
+    background-color: $light-gray;
+    border-top: 1px solid $border-color;
+    
+    .text-muted {
+        color: #666 !important;
+    }
+}
+
+// Cover image
 .cover-image {
     max-width: 100%;
     max-height: 170px;
-    text-align: center;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+    display: block;
+    margin: 0 auto;
+    
+    &:hover {
+        transform: scale(1.02);
+    }
 }
 
+// Responsive adjustments
+@media (max-width: 575.98px) {
+    .page-title {
+        font-size: 2rem;
+        letter-spacing: -0.05em;
+    }
+    
+    .container {
+        padding: 0 1rem;
+    }
+}
+
+// Note styling
 .note {
-    margin: 10px 0;
+    margin: 1rem 0;
+    padding: 1rem;
+    background-color: #fff3f3;
+    border-left: 4px solid #d4382a;
     color: #d4382a;
+    border-radius: 0 4px 4px 0;
+}
+
+// Social links
+.social-links {
+    margin: 1rem 0;
+    
+    a {
+        margin-right: 1rem;
+        color: $secondary-color;
+        
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.btn-outline-primary {
+    color: $secondary-color;
+    border-color: $secondary-color;
 }
