@@ -1,7 +1,7 @@
 ---
 title: "ThreadWeaver: Adaptive Threading for Efficient Parallel Reasoning in Language Models"
 collection: publications
-excerpt: 'ThreadWeaver is a framework for adaptive parallel reasoning that achieves accuracy on par with popular sequential reasoning models while significantly reducing inference latency. ThreadWeaver utilizes a two-stage parallel trajectory generator, trie-based training-inference co-design, and parallelization-aware reinforcement learning (P-GRPO).'
+excerpt: 'ThreadWeaver is a framework for adaptive parallel reasoning that achieves accuracy on par with cutting-edge sequential reasoning models while significantly reducing inference latency. ThreadWeaver utilizes a two-stage parallel trajectory generator, trie-based training-inference co-design, and parallelization-aware reinforcement learning (P-GRPO).'
 date: 2025-11-30
 paper_url: 'https://threadweaver-parallel.github.io/assets/paper.pdf'
 project_page_url: 'https://threadweaver-parallel.github.io/'
