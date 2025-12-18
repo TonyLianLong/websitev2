@@ -5,6 +5,7 @@ excerpt: 'ThreadWeaver is a framework for adaptive parallel reasoning that achie
 date: 2025-11-30
 paper_url: 'https://threadweaver-parallel.github.io/assets/paper.pdf'
 project_page_url: 'https://threadweaver-parallel.github.io/'
+code_url: 'https://github.com/facebookresearch/threadweaver'
 bibtex_url: 'https://threadweaver-parallel.github.io/#citation'
 authors: '**Long Lian**, Sida Wang, Felix Juefei-Xu, Tsu-Jui Fu, Xiuyu Li, Adam Yala, Trevor Darrell, Alane Suhr, Yuandong Tian, Xi Victoria Lin'
 citation:
