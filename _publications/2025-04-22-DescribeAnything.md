@@ -2,7 +2,9 @@
 title: "Describe Anything: Detailed Localized Image and Video Captioning"
 collection: publications
 excerpt: 'Describe Anything Model (DAM) generates detailed descriptions for user-specified regions in images and videos, marked by points, boxes, scribbles, or masks. We introduce DLC-Bench to evaluate such region-based descriptions.'
-date: 2025-04-22
+date: 2025-04-20
+selected: true
+venue: '*International Conference on Computer Vision* (ICCV), 2025'
 paper_url: 'https://arxiv.org/abs/2504.16072'
 project_page_url: 'https://describe-anything.github.io/'
 demo_url: 'https://huggingface.co/spaces/nvidia/describe-anything-model-demo'

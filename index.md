@@ -29,50 +29,20 @@ title: "Long (Tony) Lian's Personal Website"
     </div>
 </div>
 
+{% assign sorted_publications = site.publications | sort:"date" %}
+{% assign selected_publications = sorted_publications | where:"selected", true %}
+
 <section id="publications" class="mt-5">
     <h2 class="section-title">Publications <span class="h6">(*: equal contribution)</span></h2>
     <div class="publications-list">
-        {% assign sorted_publications = site.publications | sort:"date" %}
-        {% for publication in sorted_publications reversed %}
-        <div class="publication-item mb-4">
-            <div class="row">
-                <div class="col-md-7">
-                    <h3 class="publication-title">{{ publication.title }}</h3>
-                    <div class="publication-authors">{{publication.authors | markdownify}}</div>
-                    {% if publication.venue %}
-                        <div class="publication-venue">{{publication.venue | markdownify}}</div>
-                    {% endif %}
-                    <div class="publication-excerpt" style="display: none">{{publication.excerpt | markdownify}}</div>
-                    {% if publication.paper_url %}
-                    <div class="publication-links">
-                        <a href="{{publication.paper_url}}" class="btn btn-outline-primary btn-sm"><i class="fas fa-file-alt"></i> Paper</a>
-                        {% if publication.blog_url %}<a href="{{publication.blog_url}}" class="btn btn-outline-primary btn-sm"><i class="fas fa-blog"></i> Blog</a>{% endif %}
-                        {% if publication.project_page_url %}<a href="{{publication.project_page_url}}" class="btn btn-outline-primary btn-sm"><i class="fas fa-project-diagram"></i> Project</a>{% endif %}
-                        {% if publication.demo_url %}<a href="{{publication.demo_url}}" class="btn btn-outline-primary btn-sm"><i class="fas fa-play-circle"></i> Demo</a>{% endif %}
-                        {% if publication.video_url %}<a href="{{publication.video_url}}" class="btn btn-outline-primary btn-sm"><i class="fas fa-video"></i> Video</a>{% endif %}
-                        {% if publication.demo_video_url %}<a href="{{publication.demo_video_url}}" class="btn btn-outline-primary btn-sm"><i class="fas fa-film"></i> Demo Video</a>{% endif %}
-                        {% if publication.code_url %}<a href="{{publication.code_url}}" class="btn btn-outline-primary btn-sm"><i class="fas fa-code"></i> Code</a>{% endif %}
-                        {% if publication.poster %}<a href="{{'/assets/posters/' | append: publication.poster | relative_url }}" class="btn btn-outline-primary btn-sm"><i class="fas fa-file-image"></i> Poster</a>{% endif %}
-                        {% if publication.bibtex_url %}<a href="{{publication.bibtex_url}}" class="btn btn-outline-primary btn-sm"><i class="fas fa-quote-right"></i> BibTex</a>{% endif %}
-                        {% if publication.excerpt %}<a href="#" class="btn btn-outline-primary btn-sm tldr_btn"><i class="fas fa-info-circle"></i> TL;DR</a>{% endif %}
-                    </div>
-                    {% endif %}
-                </div>
-                {% if publication.cover_image %}
-                <div class="col-md-5 d-none d-md-block">
-                    <img class="cover-image" src="{{'/assets/cover_images/' | append: publication.cover_image | relative_url }}" alt="{{ publication.title }}" />
-                </div>
-                {% endif %}
-            </div>
-        </div>
+        {% for publication in selected_publications reversed %}
+            {% include publication_item.html %}
         {% endfor %}
-    </div>
-</section>
-
-<section id="services" class="mt-5">
-    <h2 class="section-title">Academic Services</h2>
-    <div class="services-content">
-        <p>Reviewer for CVPR/ECCV/ICCV/ICLR/ICML/NeurIPS/AAAI</p>
+        {% for publication in sorted_publications reversed %}
+            {% unless publication.selected %}
+                {% include publication_item.html %}
+            {% endunless %}
+        {% endfor %}
     </div>
 </section>
 
