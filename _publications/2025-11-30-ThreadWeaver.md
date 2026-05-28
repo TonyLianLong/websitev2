@@ -4,7 +4,7 @@ collection: publications
 excerpt: 'ThreadWeaver is a framework for adaptive parallel reasoning that achieves accuracy on par with cutting-edge sequential reasoning models while significantly reducing inference latency. ThreadWeaver utilizes a two-stage parallel trajectory generator, trie-based training-inference co-design, and parallelization-aware reinforcement learning (P-GRPO).'
 date: 2025-11-30
 selected: true
-venue: '*International Conference on Machine Learning* (ICML), 2026 (**Spotlight**)'
+venue: '*International Conference on Machine Learning* (ICML), 2026 (**Oral**)'
 paper_url: 'https://threadweaver-parallel.github.io/assets/paper.pdf'
 project_page_url: 'https://threadweaver-parallel.github.io/'
 code_url: 'https://github.com/facebookresearch/threadweaver'
